@@ -15,5 +15,18 @@ router.get('/json', async (ctx, next) => {
     title: 'koa2 json'
   }
 })
+router.get('/data', async (ctx, next) => {
+  ctx.body = {
+    inputValue: 'Writing Something',
+    todoList: [
+      '任务0',
+      '任务1',
+      '任务2',
+      '任务3',
+      '任务4',
+      '任务5',
+    ]
+  }
+})
 
 module.exports = router

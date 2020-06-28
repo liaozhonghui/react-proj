@@ -1,14 +1,7 @@
-import { CHANGE_INPUT, ADDITEM, DELETEITEM } from './actionTypes'
+import { CHANGE_INPUT, ADDITEM, DELETEITEM, GETLIST } from './actionTypes'
 const defaultState = {
     inputValue: 'Writing Something',
-    todoList: [
-        '任务0',
-        '任务1',
-        '任务2',
-        '任务3',
-        '任务4',
-        '任务5',
-    ]
+    todoList: []
 }
 export default (state = defaultState, action) => {
     if (CHANGE_INPUT === action.type) {
@@ -27,5 +20,11 @@ export default (state = defaultState, action) => {
         newState.todoList.splice(action.value, 1);
         return newState;
     }
+    if (GETLIST === action.type) {
+        let newState = JSON.parse(JSON.stringify(state))
+        newState.todoList = action.data.todoList
+        return newState;
+    }
+    
     return state;
 }

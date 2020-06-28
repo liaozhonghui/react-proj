@@ -1,0 +1,1 @@
+export default () => (<div>第一份博客</div>)

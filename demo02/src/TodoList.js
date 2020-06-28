@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'antd/dist/antd.css'
 
 import store from './store/index'
-import { changeInputAction, addItemAction, deleteItemAction } from './store/actionCreators'
+import { changeInputAction, addItemAction, deleteItemAction, getMyListSaga} from './store/actionCreators'
 import TodoListUI from './TodoListUI'
 
 class TodoList extends Component {
@@ -25,6 +25,10 @@ class TodoList extends Component {
                 deleteItem={this.deleteItem}
             />
         )
+    }
+    componentDidMount() {
+        const action = getMyListSaga();
+        store.dispatch(action);
     }
     changeInputValue(e) {
         const action = changeInputAction(e.target.value)
