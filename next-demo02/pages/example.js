@@ -1,7 +1,12 @@
-function Example() {
+import Link from 'next/link'
+import { withRouter } from 'next/router'
+
+export default withRouter(({ router }) => {
     return (
-        <div>Hello Example</div>
+        <div>
+            <div>{router.query.name}</div>
+            <Link href='/'><a>返回首页</a></Link>
+        </div>
     )
 }
-
-export default Example
+)

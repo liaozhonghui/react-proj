@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy</title>
+</head>
+
+<body>
+    <div>导航</div>
+    <div>
+        <div>第一块表单内容</div>
+        <form method="POST" action="http://localhost:8080">
+            <input style="display:none" type="text" name="type" value="db2">
+            命令 <input type="text" name="cmd"  placeholder="ps" required><br>
+            参数 <input type="text" name="args"  placeholder="-e -f" required><br>
+            管道命令 <input type="text" name="pipe" placeholder='grep -v grep' required><br>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+    <div>第二块表单内容</div>
+    <div>第三块表单内容</div>
+</body>
+
+</html>

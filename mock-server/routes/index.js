@@ -28,5 +28,11 @@ router.get('/data', async (ctx, next) => {
     ]
   }
 })
+router.post('/submit', async (ctx, next) => {
+  console.log(ctx.request.body)
+  ctx.body = {
+    status:'success'
+  }
+})
 
 module.exports = router
